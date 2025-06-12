@@ -1,0 +1,313 @@
+:root {
+    --cor-fundo: #FDF8E1;
+    --cor-texto: #402E1B;
+    --cor-amarelo: #FFC107;
+    --cor-azul: #0D47A1;
+    --cor-branco: #FFFFFF;
+    --fonte-titulos: 'Merriweather', serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    /* Textura sutil de tela de pintura */
+    background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.04"%3E%3Cpath d="M80 0v80H0V0h80zM40 0v80zM0 40h80z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    line-height: 1.7;
+    cursor: none; /* Escondemos o cursor padrão */
+}
+
+/* --- Estilos para as Abelhas Animadas --- */
+
+.bee-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Permite clicar através das abelhas */
+    z-index: 9990; /* Fica na frente do fundo, mas atrás do cursor */
+}
+
+.bee {
+    position: absolute;
+    top: -5%; /* Começa fora da tela, em cima */
+    font-size: 20px;
+    user-select: none;
+    /* Aplica a animação 'fall' que vamos criar abaixo */
+    animation: fall linear infinite;
+}
+
+/* Animação de queda e flutuação */
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) translateX(100px) rotate(20deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(105vh) translateX(-50px) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+/* --- Estilos para a Tela de Loading --- */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Classe para esconder a tela de loading suavemente */
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Bloqueia a rolagem do site enquanto o loading está ativo */
+body.loading {
+    overflow: hidden;
+}
+
+.sunflower-loader {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    animation: spin 2.5s linear infinite;
+}
+
+/* A animação de giro já existe no seu CSS, mas caso não, aqui está */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-bar-container {
+    width: 250px;
+    height: 10px;
+    background-color: rgba(64, 46, 27, 0.2); /* Fundo da barra */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#loading-bar {
+    width: 0%; /* Começa com 0% */
+    height: 100%;
+    background-color: var(--cor-amarelo); /* Cor do preenchimento */
+    border-radius: 5px;
+    transition: width 0.1s linear; /* Animação suave do preenchimento */
+}
+
+#loading-percentage {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+}
+
+/* Pincel Mágico do Mouse */
+.cursor-brush {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Cor de preenchimento amarelo com 50% de transparência */
+    background-color: rgba(255, 193, 7, 0.5); 
+    /* Borda branca e sólida para definição */
+    border: 2px solid white; 
+    /* Sombra suave para dar profundidade */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    z-index: 9999;
+}
+
+body:hover .cursor-brush {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+a:hover ~ .cursor-brush, .motivo-card:hover ~ .cursor-brush {
+    width: 60px;
+    height: 60px;
+    background-color: var(--cor-azul);
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Títulos com Pincelada */
+.title-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-title {
+    font-family: var(--fonte-titulos);
+    font-size: 3rem;
+    color: var(--cor-azul);
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.data{
+    color: var(--cor-amarelo);
+    font-size: 15px;
+}
+
+
+
+.subtitle { text-align: center; max-width: 600px; margin: -20px auto 40px auto; }
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    position: relative; /* Essencial para posicionar o vídeo e o overlay */
+    overflow: hidden; /* Garante que nada vaze para fora */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-branco);
+}
+
+/* Vídeo de fundo */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2; /* Atrás de tudo */
+    object-fit: cover;
+}
+
+/* Camada escura sobre o vídeo */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Camada escura */
+    z-index: -1; /* Acima do vídeo, abaixo do texto */
+}
+
+/* Texto em cima do vídeo */
+.hero-text {
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+    font-family: var(--fonte-titulos);
+    font-size: 4.5rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+
+
+/* Timeline (refinada) */
+.timeline { position: relative; max-width: 600px; margin: 40px auto 0 auto; }
+.timeline::after { content: ''; position: absolute; width: 2px; background-color: var(--cor-amarelo); opacity: 0.5; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-item::after {
+  content: '🌻';
+  position: absolute;
+  font-size: 20px;
+  right: -13px;
+  top: 35px;
+  z-index: 1;
+}
+.timeline-item:nth-child(even)::after { left: -13px; }
+.timeline-content { padding: 20px; background-color: var(--cor-branco); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 3px solid var(--cor-amarelo); }
+.timeline-content:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.timeline-content h3 { font-family: var(--fonte-titulos); font-size: 1.5rem; color: var(--cor-azul); }
+
+/* Motivos (refinado) */
+.motivos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.motivo-card { background: var(--cor-branco); padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.motivo-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.motivo-card h3 { font-family: var(--fonte-titulos); font-size: 1.5rem; margin-bottom: 10px; color: var(--cor-texto); }
+
+/* Galeria em Mosaico */
+.masonry-gallery {
+    column-count: 3; /* Número de colunas */
+    column-gap: 15px;
+}
+.masonry-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.masonry-gallery img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Carta Final */
+#carta { background-color: #faf4d3; padding: 60px 0; }
+.carta-content { max-width: 700px; }
+.letter-title { font-family: var(--fonte-titulos); font-style: italic; font-size: 1.8rem; text-align: center; margin-bottom: 20px; }
+.signature { text-align: right; margin-top: 30px; font-family: 'Merriweather', serif; font-style: italic; font-size: 1.5rem; color: var(--cor-azul); }
+
+/* Rodapé */
+footer { padding: 40px 20px; text-align: center; background-color: #faf4d3; }
+footer .sunflower { display: inline-block; animation: spin 8s infinite linear; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Animações e Responsividade */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+    .masonry-gallery { column-count: 2; }
+    .timeline::after { left: 20px; }
+    .timeline-item, .timeline-item:nth-child(even) { width: 100%; left: 0; padding-left: 50px; }
+    .timeline-item::after, .timeline-item:nth-child(even)::after { left: 12px; }
+    .cursor-brush { display: none; } /* Esconde pincel no mobile */
+    body { cursor: auto; }
+}

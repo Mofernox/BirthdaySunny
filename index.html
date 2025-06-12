@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Vitória</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/style/style.css">
+</head>
+<body>
+    
+    <div id="loading-screen">
+        <svg class="sunflower-loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="15" fill="#5C3D0A"/>
+            <path d="M50,0 A50,50 0 0,1 75,6.7 L65,22 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 93.3,25 L78,35 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 100,50 L75,50 A25,25 0 0,0 50,25 Z" fill="#FFB300"/>
+            <path d="M50,0 A50,50 0 0,1 93.3,75 L78,65 A25,25 0 0,0 50,25 Z" fill="#FFB300"/>
+            <path d="M50,0 A50,50 0 0,1 75,93.3 L65,78 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 50,100 L50,75 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 25,93.3 L35,78 A25,25 0 0,0 50,25 Z" fill="#FFD54F"/>
+            <path d="M50,0 A50,50 0 0,1 6.7,75 L22,65 A25,25 0 0,0 50,25 Z" fill="#FFD54F"/>
+            <path d="M50,0 A50,50 0 0,1 0,50 L25,50 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 6.7,25 L22,35 A25,25 0 0,0 50,25 Z" fill="#FFC107"/>
+            <path d="M50,0 A50,50 0 0,1 25,6.7 L35,22 A25,25 0 0,0 50,25 Z" fill="#FFD54F"/>
+        </svg>
+
+        <div class="loading-bar-container">
+            <div id="loading-bar"></div>
+        </div>
+        <span id="loading-percentage">0%</span>
+    </div>
+
+    <div class="bee-container"></div>
+
+    <div class="cursor-brush"></div>
+
+    <header class="hero-section">
+        <video playsinline autoplay muted loop class="hero-video">
+            <source src="./src/assets/videos/sunflower.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+
+        <div class="hero-text">
+            <h1>Para Vitória Bazzuco</h1>
+            <p>O AMOR DA MINHA VIDA</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="historia" class="container">
+
+            <div class="title-container fade-in">
+                <div class="brush-stroke"></div>
+                <h2 class="section-title">Nossa História Florescendo</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>O Começo <br><span class="data">23/06/24</span></h3>
+                        <p>Quem diria que sempre estavamos tão perto e a gente nem imaginava tudo que iriamos viver juntos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>Pedido de namoro  <br><span class="data">21/10/24</span></h3>
+                        <p>Quando te pedi em namoro, pensei muito sobre você ser a mulher que eu queria para o meu futuro, melhor escolha que fiz na minha vida!</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>Primeira Viagem <br><span class="data">30/12/2024</span></h3>
+                        <p>Primeira viagem que fizemos juntos, foi um momento muito especial, mesmo tendo nossas disavenças foi íncrivel ter viajado com você.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>Hoje <br><span class="data">12/06/2025</span></h3>
+                        <p>Nosso primeiro ano de muitos comemorando o dia dos namorados!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="motivos" class="container">
+            <div class="title-container fade-in">
+                <div class="brush-stroke"></div>
+                <h2 class="section-title">Como um Girassol, Você...</h2>
+            </div>
+            <div class="motivos-grid">
+                <div class="motivo-card fade-in">
+                    <h3>Ilumina Tudo</h3>
+                    <p>Sua luz não só me guia, ela me transforma e transforma qualquer sombra em um lugar mais quente e feliz.</p>
+                </div>
+                <div class="motivo-card fade-in">
+                    <h3>É Pura Alegria</h3>
+                    <p>Sua energia é a cor mais viva na paleta dos meus dias, contagiando tudo ao meu redor, seus olhos brilhantes me olhando alegra o meu dia.</p>
+                </div>
+                <div class="motivo-card fade-in">
+                    <h3>É Meu Norte</h3>
+                    <p>Mesmo nos dias mais difíceis, estressado, triste, magoado, meu coração se vira instintivamente na sua direção, buscando seu amor, calor e paz, sendo a única coisa que eu quero naquele momento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="container">
+            <div class="title-container fade-in">
+                <div class="brush-stroke"></div>
+                <h2 class="section-title">Nosso Mosaico de Memórias</h2>
+            </div>
+            <p class="subtitle fade-in">Fragmentos dos nossos melhores momentos, espalhados como uma obra de arte.</p>
+             <div class="masonry-gallery">
+                <img src="./src/assets/VV/trio.jpg" alt="Foto de nós dois" class="fade-in">
+                <img src="./src/assets/VV/cosplay.jpg" alt="Foto de nós dois" class="fade-in">
+                <img src="./src/assets/VV/vet.jpeg" alt="Foto de nós dois" class="fade-in">
+                <img src="./src/assets/VV/delicia.jpeg" alt="Foto de nós dois" class="fade-in">
+       
+                <img src="./src/assets/VV/show.jpeg" alt="Foto de nós dois" class="fade-in">
+                <img src="./src/assets/VV/trator.jpeg" alt="Foto de nós dois" class="fade-in">
+             </div>
+        </section>
+
+        <section id="carta">
+            <div class="container carta-content fade-in">
+                 <h3 class="letter-title">Para o amor da minha vida...</h3>
+                <p>Feliz Dia dos Namorados, meu amor! 💛🌻<p>
+                <p>
+                    Hoje é só mais uma desculpa pra te lembrar do quanto você é especial pra mim. Desde que você entrou na minha vida, tudo ficou mais leve, mais bonito… e com mais sentido. 
+                    Você tem esse dom de transformar qualquer momento simples ao sem lado em lembranças inesquecíveis.
+                    Te amar é fácil, é natural, é como respirar. Eu não preciso forçar sorrisos, quando estou com você eles simplesmente aparecem. Você tem um coração enorme, puro e é bondosa(até de mais),
+                    porém foi isso que me fez apaixonar por você, seus olhos me iluminam e não me canso de olhar pra eles, não é atoa que desde o dia em que olhei pra eles no restaurante, não saiu da minha cabeça até hoje.
+                    Porém o melhor de tudo é saber que eu posso contar com você nos dias bons e, principalmente, nos dias difíceis.
+                    Você é meu porto seguro, minha inspiração, meu lugar favorito no mundo. Obrigado por ser você, com esse jeitinho que me conquista todos os dias. 
+                    Obrigado por me ensinar sobre amor com gestos, com carinho, com paciência, tenho certeza que aprendi muito nessa relação e quero aprender cada vez mais ao seu lado.
+                    Que esse seja só mais um de muitos Dias dos Namorados ao seu lado. Te amo mais do que palavras conseguem explicar, mas mesmo assim eu vou passar 
+                    a vida tentando mostrar isso pra você, dia após dia.
+
+                </p>
+                
+                <p class="signature">Com todo o meu amor,<br>Vitor Ramos</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito com <span class="sunflower">🌻</span> e todo o meu coração para você.</p>
+        <p>Feliz Dia dos Namorados! 12 de Junho de 2025</p>
+    </footer>
+
+    <script src="./src/script/script.js"></script>
+</body>
+</html>
